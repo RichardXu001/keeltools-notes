@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wiring AI into your workflow: from the ChatGPT tab to an MCP endpoint · KeelTools Notes</title>
+<meta name="description" content="Four levels of AI integration — chat UI, API, automation platforms, MCP — with a copy-paste MCP client config and a practical rollout order.">
+<link rel="canonical" href="https://richardxu001.github.io/keeltools-notes/en/connect-ai-to-your-workflow.html">
+<link rel="alternate" hreflang="zh-CN" href="https://richardxu001.github.io/keeltools-notes/zh/connect-ai-to-your-workflow.html">
+<link rel="alternate" hreflang="en" href="https://richardxu001.github.io/keeltools-notes/en/connect-ai-to-your-workflow.html">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">KeelTools <b>Notes</b></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../index.html">Home</a>
+      <a href="https://keeltools.com/directory/">Directory</a>
+      <a href="https://keeltools.com/blog/">Main-site blog</a>
+    </nav>
+    <p class="lang"><a href="../zh/connect-ai-to-your-workflow.html">中文</a></p>
+  </div>
+</header>
+<main class="wrap">
+  <p class="eyebrow">Note 02 · Workflow</p>
+  <h1>Wiring AI into your workflow: from the ChatGPT tab to an MCP endpoint</h1>
+  <p class="meta">2026-10-20 · ~8 min</p>
+
+  <div class="lede">
+    <p>“Integrate AI into my workflow” sounds like a project. It is really four levels: chat UI, API, automation platform, and — since late 2024 — MCP. Most people stop at level one, not because it is hard, but because they never saw the other three.</p>
+    <p>The short version: level four (MCP) is currently the best-value step. One configuration, and any MCP-capable client can call your data source — no per-tool integration code.</p>
+  </div>
+
+  <h2>01 The four levels</h2>
+  <table>
+    <caption>What each level adds is reusability, not intelligence</caption>
+    <thead><tr><th>Level</th><th>Shape</th><th>Fits</th></tr></thead>
+    <tbody>
+      <tr><td>① Chat UI</td><td>A browser tab, pasted by hand</td><td>One-off questions; dies when you switch devices</td></tr>
+      <tr><td>② API</td><td>Calls from your own scripts</td><td>You can code and want it inside a product</td></tr>
+      <tr><td>③ Automation platform</td><td>n8n / Make / Lindy-type builders</td><td>Scheduled jobs and cross-app chains, node-based</td></tr>
+      <tr><td>④ MCP endpoint</td><td>A protocol-standard server</td><td>One data source, many AI clients</td></tr>
+    </tbody>
+  </table>
+
+  <h2>02 Why MCP is the watershed</h2>
+  <p>MCP (Model Context Protocol) turns the client-to-data-source relationship from point-to-point integration into a socket standard: package your data as a server, and any MCP-capable client can use it. The same server can serve Claude, Cursor and desktop clients at once — <strong>publish once, reuse everywhere</strong>.</p>
+
+  <h2>03 Two real usages</h2>
+  <h3>Usage one: give an AI client a searchable catalog</h3>
+  <p>KeelTools' directory MCP is read-only and needs no login: the endpoint is <a href="https://keeltools.com/mcp">keeltools.com/mcp</a>, exposing two tools — <code>search_directory</code> (search by name, alias or tagline, filterable by tool / skill / prompt) and <code>get_entry</code> (fetch a detail entry by type and slug). Add this to any MCP-capable client:</p>
+  <blockquote>{
+  "mcpServers": {
+    "keeltools": { "type": "http", "url": "https://keeltools.com/mcp" }
+  }
+}</blockquote>
+  <p>The full setup guide, auth details and FAQ live on the main site's <a href="https://keeltools.com/about/">about page</a>, which doubles as the MCP's manual. To see what's inside first, browse the <a href="https://keeltools.com/directory/">directory</a> before wiring anything up.</p>
+
+  <h3>Usage two: hand repetitive work to an automation platform</h3>
+  <p>MCP decides what the AI can read; automation platforms decide when it acts. Auto-transcribing and filing meeting notes, pushing new form rows into a task list, digesting the inbox into a note each morning — these scheduled, cross-app chains are a matter of minutes in node-based builders like <a href="https://keeltools.com/tools/n8n/">n8n</a> or <a href="https://keeltools.com/tools/make/">Make</a>, and cost more to maintain as hand-rolled scripts. The two layers stack: an AI node inside an automation platform can point at the same MCP data source.</p>
+  <p>Once a server is listed in the official registry, downstream aggregators (mcp.so, Glama, PulseMCP and others) sync it on an hourly cadence — that is the distribution mechanism turning one data source into many client entry points; the backlinks are a side effect.</p>
+
+  <h2>04 A practical rollout order</h2>
+  <h3>Pin the data source before touching protocols</h3>
+  <p>MCP does not fix “there is no data”. Decide what the AI should reach — your notes, a product catalog, internal docs — before choosing between rolling your own server at level ② and grabbing something that already exists.</p>
+  <h3>The shortest path to your own server</h3>
+  <p>The official SDK ships a Streamable HTTP transport; a server of a few dozen lines runs fine. Publishing to the official registry requires domain auth (a public key record under <code>/.well-known/</code>). Both steps are covered in KeelTools' about page and blog.</p>
+  <blockquote>If you keep one rule: integrating AI is data-source standardization; the protocol only turns integration cost from O(n×m) into O(n+m).</blockquote>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p>KeelTools Notes · GitHub Pages · more on the <a href="https://keeltools.com/blog/">KeelTools blog</a></p>
+  </div>
+</footer>
+</body>
+</html>

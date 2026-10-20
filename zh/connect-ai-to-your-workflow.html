@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>把 AI 接进自己的工作流：从 ChatGPT 网页到 MCP 端点 · KeelTools Notes</title>
+<meta name="description" content="把 AI 接进工作流的四层方式：网页对话、API、自动化平台、MCP 端点；含可直接复制的 MCP 客户端配置。">
+<link rel="canonical" href="https://richardxu001.github.io/keeltools-notes/zh/connect-ai-to-your-workflow.html">
+<link rel="alternate" hreflang="en" href="https://richardxu001.github.io/keeltools-notes/en/connect-ai-to-your-workflow.html">
+<link rel="alternate" hreflang="zh-CN" href="https://richardxu001.github.io/keeltools-notes/zh/connect-ai-to-your-workflow.html">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">KeelTools <b>Notes</b></a>
+    <nav class="site-nav" aria-label="导航">
+      <a href="../index.html">首页</a>
+      <a href="https://keeltools.com/directory/">工具目录</a>
+      <a href="https://keeltools.com/blog/">主站博客</a>
+    </nav>
+    <p class="lang"><a href="../en/connect-ai-to-your-workflow.html">English</a></p>
+  </div>
+</header>
+<main class="wrap">
+  <p class="eyebrow">Note 02 · Workflow</p>
+  <h1>把 AI 接进自己的工作流：从 ChatGPT 网页到 MCP 端点</h1>
+  <p class="meta">2026-10-20 · 约 9 分钟</p>
+
+  <div class="lede">
+    <p>「接进工作流」听起来是个大工程，其实只有四层：网页对话、API、自动化平台、以及 2024 年底之后普及的 MCP。大部分人停在第一层，不是因为难，而是不知道上面三层长什么样。</p>
+    <p>结论：第四层（MCP）是目前性价比最高的一步——一次配置，任何支持 MCP 的客户端都能调用你指定的数据源，不需要为每个工具写一遍集成。</p>
+  </div>
+
+  <h2>01 四层接入方式</h2>
+  <table>
+    <caption>四层的分工：每升一层，多的是「可复用」，不是「更聪明」</caption>
+    <thead><tr><th>层</th><th>形态</th><th>适合</th></tr></thead>
+    <tbody>
+      <tr><td>① 网页对话</td><td>浏览器标签页，手动粘贴</td><td>一次性问答；换个设备就断</td></tr>
+      <tr><td>② API</td><td>脚本里调用模型</td><td>有工程能力、要嵌进产品</td></tr>
+      <tr><td>③ 自动化平台</td><td>n8n / Make / Lindy 类</td><td>定时任务、跨应用串联，节点式搭建</td></tr>
+      <tr><td>④ MCP 端点</td><td>标准协议的服务端</td><td>把一份数据源同时接进多个 AI 客户端</td></tr>
+    </tbody>
+  </table>
+
+  <h2>02 为什么 MCP 是个分水岭</h2>
+  <p>MCP（Model Context Protocol）把「AI 客户端 ↔ 数据源」的关系从点对点集成变成了插座标准：数据源做成一个 server，客户端只要支持 MCP 就能用。一个 server 可以同时被 Claude、Cursor、各类桌面客户端接入——<strong>一次发布，多端复用</strong>。</p>
+
+  <h2>03 两个真实用法</h2>
+  <h3>用法一：给 AI 客户端接一份可检索的目录</h3>
+  <p>KeelTools 的目录 MCP 是只读的、无需登录：端点在 <a href="https://keeltools.com/mcp">keeltools.com/mcp</a>，暴露两个工具——<code>search_directory</code>（按名称/别名/标语检索，可按 tool / skill / prompt 过滤）和 <code>get_entry</code>（按类型 + slug 取详情）。在任何支持 MCP 的客户端里加上这段配置就能用：</p>
+  <blockquote>{
+  "mcpServers": {
+    "keeltools": { "type": "http", "url": "https://keeltools.com/mcp" }
+  }
+}</blockquote>
+  <p>完整的接入说明、认证方式和常见问题在主站的 <a href="https://keeltools.com/about/">关于页</a>，那页同时是这个 MCP 的说明书。想先看看目录里有什么，去 <a href="https://keeltools.com/directory/">工具目录</a> 浏览一遍再决定接不接。</p>
+
+  <h3>用法二：把重复劳动交给自动化平台</h3>
+  <p>MCP 管「AI 读什么」，自动化平台管「什么时候动手」。会议结束自动转写并归档、表单新行自动进任务清单、每天定时把收件箱摘要推到笔记里——这类定时与跨应用串联，在 <a href="https://keeltools.com/tools/n8n/">n8n</a>、<a href="https://keeltools.com/tools/make/">Make</a> 这类节点式平台里是几十分钟的活，自己写脚本维护成本反而更高。两层可以叠加：自动化平台里的 AI 节点同样可以挂 MCP 数据源。</p>
+  <p>官方 registry 收录一个 server 之后，下游聚合站（mcp.so、Glama、PulseMCP 等）会按小时级同步收录——这是把一份数据源变成多个客户端入口的分发机制，外链只是顺带结果。</p>
+
+  <h2>04 落地顺序建议</h2>
+  <h3>先确认数据源，再谈协议</h3>
+  <p>MCP 不解决「没有数据」的问题。先想清楚要让 AI 访问什么——自己的笔记、产品目录、内部文档——数据源清楚了，选第②层自己写或找现成 server 才有依据。</p>
+  <h3>自建的最短路径</h3>
+  <p>官方 SDK 提供 Streamable HTTP 传输，一个几十行的 server 就能跑起来；发布到官方 registry 需要域名认证（在 <code>/.well-known/</code> 下放公钥记录）。这两步的实操细节，KeelTools 的关于页和博客里都有。</p>
+  <blockquote>如果只能记一条：把 AI 接进工作流的本质是「数据源标准化」，协议只是把集成成本从 O(n×m) 降到 O(n+m)。</blockquote>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p>KeelTools Notes · GitHub Pages · 更多内容见 <a href="https://keeltools.com/blog/">KeelTools 博客</a></p>
+  </div>
+</footer>
+</body>
+</html>
