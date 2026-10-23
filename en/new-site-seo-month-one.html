@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A new site's first month of SEO: checking the index beats publishing · KeelTools Notes</title>
+<meta name="description" content="A new site has no search data in month one, so the work is plumbing: verify three webmaster consoles, submit your sitemap, and review indexing weekly.">
+<link rel="canonical" href="https://richardxu001.github.io/keeltools-notes/en/new-site-seo-month-one.html">
+<link rel="alternate" hreflang="zh-CN" href="https://richardxu001.github.io/keeltools-notes/zh/new-site-seo-month-one.html">
+<link rel="alternate" hreflang="en" href="https://richardxu001.github.io/keeltools-notes/en/new-site-seo-month-one.html">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">KeelTools <b>Notes</b></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../index.html">Home</a>
+      <a href="https://keeltools.com/directory/">Directory</a>
+      <a href="https://keeltools.com/blog/">Main-site blog</a>
+    </nav>
+    <p class="lang"><a href="../zh/new-site-seo-month-one.html">中文</a></p>
+  </div>
+</header>
+<main class="wrap">
+  <p class="eyebrow">Note 07 · SEO</p>
+  <h1>A new site's first month of SEO: checking the index beats publishing</h1>
+  <p class="meta">2026-10-23 · ~6 min</p>
+
+  <div class="lede">
+    <p>A new site has no search data in its first month, so the worst use of that month is writing more articles. The first real job is a single one: make sure search engines can find, crawl and understand every page you want to rank.</p>
+    <p>The short version: month one is three webmaster consoles, one sitemap submission, and a weekly indexing review — plumbing first, content cadence second.</p>
+  </div>
+
+  <h2>01 Three consoles, none optional</h2>
+  <p>Every search engine runs its own webmaster console and none shares data with the others: <strong>Google Search Console</strong> for Google (verify the property, submit the sitemap in the Sitemaps report, use URL Inspection for per-page status); <strong>Bing Webmaster Tools</strong> for Bing and Copilot (it can import straight from Search Console, halving the setup); add Baidu's platform if Chinese-speaking users matter. Skip this and every later “why isn't it indexed?” question is unanswerable — no data, no diagnosis.</p>
+
+  <h2>02 The three files every site needs</h2>
+  <table>
+    <caption>Minimum config before launch</caption>
+    <thead><tr><th>File</th><th>Job</th><th>Common mistake</th></tr></thead>
+    <tbody>
+      <tr><td>sitemap.xml</td><td>Tells engines every indexable page</td><td>New pages missing; noindex pages included</td></tr>
+      <tr><td>robots.txt</td><td>Declares crawl rules and points to the sitemap</td><td>No Sitemap line — or the file 404s entirely</td></tr>
+      <tr><td>Canonical tags</td><td>Each URL points at itself; no duplicate-content split</td><td>Bilingual sites missing reciprocal hreflang</td></tr>
+    </tbody>
+  </table>
+  <p>One easy-to-miss trap: <strong>on static hosting, a 404 doesn't raise an alarm — it just silently shrinks your index</strong>. Curl every URL in the sitemap before submitting; we self-checked this GitHub Pages notes site exactly that way and found the missing robots.txt on the first pass.</p>
+
+  <h2>03 Review weekly, not daily</h2>
+  <p>There is no “indexed immediately” after submitting: on a fresh domain, Google's first crawl usually takes days to weeks. Review weekly: week one checks that the sitemap was accepted and error-free; week two inspects pages one by one for indexed/not-indexed; week four watches impressions move off zero. <strong>Four consecutive weeks with zero pages indexed</strong> is when you go back to technical causes — robots blocks, canonical errors, content quality — not when you rewrite everything after week one.</p>
+
+  <h2>04 Content follows the plumbing</h2>
+  <h3>Key pages first, long tail second</h3>
+  <p>Homepage, directory, core product pages — get these indexed first; they are the skeleton of how the site appears in search. Long-tail articles come after the skeleton is stable, or you keep rearranging structure while publishing and dilute the signals.</p>
+  <h3>Internal links are the second pipe</h3>
+  <p>Indexed is not ranked: a new page should be linked from at least one already-indexed page on the day it goes live. The first link graph doesn't need to be complex — home → key pages → new article is three hops, enough for a crawler to walk.</p>
+  <p>For a checklist you can run top to bottom, the KeelTools blog has a full-length piece: <a href="https://keeltools.com/blog/new-site-seo-first-month/">the first-month SEO checklist for a new site</a>; keyword research pairs with it in <a href="https://keeltools.com/blog/keyword-research-google-trends/">keyword research with Google Trends</a>, and the link side in <a href="https://keeltools.com/blog/backlinks-worth-doing-and-risky/">which backlinks are worth doing and which are risky</a>.</p>
+  <blockquote>If you keep one rule: month one's KPI is pages indexed, not articles published. Content without plumbing just spins in place.</blockquote>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p>KeelTools Notes · GitHub Pages · more on the <a href="https://keeltools.com/blog/">KeelTools blog</a></p>
+  </div>
+</footer>
+</body>
+</html>

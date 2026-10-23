@@ -1,0 +1,377 @@
+{
+ "generated": "2026-10-21",
+ "source": "keeltools.com catalog",
+ "count": 74,
+ "entries": [
+  {
+   "type": "tool",
+   "name": "CodeRabbit",
+   "url": "https://keeltools.com/tools/coderabbit/"
+  },
+  {
+   "type": "tool",
+   "name": "Qodo (formerly Codium)",
+   "url": "https://keeltools.com/tools/qodo/"
+  },
+  {
+   "type": "tool",
+   "name": "GitHub Copilot",
+   "url": "https://keeltools.com/tools/github-copilot/"
+  },
+  {
+   "type": "tool",
+   "name": "Aider",
+   "url": "https://keeltools.com/tools/aider/"
+  },
+  {
+   "type": "tool",
+   "name": "Tabnine",
+   "url": "https://keeltools.com/tools/tabnine/"
+  },
+  {
+   "type": "tool",
+   "name": "Sourcegraph Cody",
+   "url": "https://keeltools.com/tools/sourcegraph-cody/"
+  },
+  {
+   "type": "tool",
+   "name": "Continue",
+   "url": "https://keeltools.com/tools/continue/"
+  },
+  {
+   "type": "tool",
+   "name": "Augment Code",
+   "url": "https://keeltools.com/tools/augment-code/"
+  },
+  {
+   "type": "tool",
+   "name": "Pieces",
+   "url": "https://keeltools.com/tools/pieces/"
+  },
+  {
+   "type": "tool",
+   "name": "Cursor",
+   "url": "https://keeltools.com/tools/cursor/"
+  },
+  {
+   "type": "tool",
+   "name": "Otter.ai",
+   "url": "https://keeltools.com/tools/otter-ai/"
+  },
+  {
+   "type": "tool",
+   "name": "NotebookLM",
+   "url": "https://keeltools.com/tools/notebooklm/"
+  },
+  {
+   "type": "tool",
+   "name": "ChatGPT",
+   "url": "https://keeltools.com/tools/chatgpt/"
+  },
+  {
+   "type": "tool",
+   "name": "Claude",
+   "url": "https://keeltools.com/tools/claude/"
+  },
+  {
+   "type": "tool",
+   "name": "Google Gemini",
+   "url": "https://keeltools.com/tools/google-gemini/"
+  },
+  {
+   "type": "tool",
+   "name": "Canva",
+   "url": "https://keeltools.com/tools/canva/"
+  },
+  {
+   "type": "tool",
+   "name": "Gamma",
+   "url": "https://keeltools.com/tools/gamma/"
+  },
+  {
+   "type": "tool",
+   "name": "Grammarly",
+   "url": "https://keeltools.com/tools/grammarly/"
+  },
+  {
+   "type": "tool",
+   "name": "Fathom",
+   "url": "https://keeltools.com/tools/fathom/"
+  },
+  {
+   "type": "tool",
+   "name": "Fireflies.ai",
+   "url": "https://keeltools.com/tools/fireflies-ai/"
+  },
+  {
+   "type": "tool",
+   "name": "Notion",
+   "url": "https://keeltools.com/tools/notion/"
+  },
+  {
+   "type": "tool",
+   "name": "Zapier",
+   "url": "https://keeltools.com/tools/zapier/"
+  },
+  {
+   "type": "tool",
+   "name": "Obsidian",
+   "url": "https://keeltools.com/tools/obsidian/"
+  },
+  {
+   "type": "tool",
+   "name": "n8n",
+   "url": "https://keeltools.com/tools/n8n/"
+  },
+  {
+   "type": "tool",
+   "name": "Perplexity",
+   "url": "https://keeltools.com/tools/perplexity/"
+  },
+  {
+   "type": "tool",
+   "name": "Motion",
+   "url": "https://keeltools.com/tools/motion/"
+  },
+  {
+   "type": "tool",
+   "name": "Clockwise",
+   "url": "https://keeltools.com/tools/clockwise/"
+  },
+  {
+   "type": "tool",
+   "name": "Granola",
+   "url": "https://keeltools.com/tools/granola/"
+  },
+  {
+   "type": "tool",
+   "name": "Notion Calendar",
+   "url": "https://keeltools.com/tools/notion-calendar/"
+  },
+  {
+   "type": "tool",
+   "name": "OpenRouter",
+   "url": "https://keeltools.com/tools/openrouter/"
+  },
+  {
+   "type": "tool",
+   "name": "Google AI Studio",
+   "url": "https://keeltools.com/tools/google-ai-studio/"
+  },
+  {
+   "type": "tool",
+   "name": "Windsurf",
+   "url": "https://keeltools.com/tools/windsurf/"
+  },
+  {
+   "type": "tool",
+   "name": "Reclaim.ai",
+   "url": "https://keeltools.com/tools/reclaim-ai/"
+  },
+  {
+   "type": "tool",
+   "name": "Wispr Flow",
+   "url": "https://keeltools.com/tools/wispr-flow/"
+  },
+  {
+   "type": "tool",
+   "name": "Ideogram",
+   "url": "https://keeltools.com/tools/ideogram/"
+  },
+  {
+   "type": "tool",
+   "name": "ElevenLabs",
+   "url": "https://keeltools.com/tools/elevenlabs/"
+  },
+  {
+   "type": "tool",
+   "name": "CapCut",
+   "url": "https://keeltools.com/tools/capcut/"
+  },
+  {
+   "type": "tool",
+   "name": "Suno",
+   "url": "https://keeltools.com/tools/suno/"
+  },
+  {
+   "type": "tool",
+   "name": "Runway",
+   "url": "https://keeltools.com/tools/runway/"
+  },
+  {
+   "type": "tool",
+   "name": "Leonardo.Ai",
+   "url": "https://keeltools.com/tools/leonardo-ai/"
+  },
+  {
+   "type": "tool",
+   "name": "QuillBot",
+   "url": "https://keeltools.com/tools/quillbot/"
+  },
+  {
+   "type": "tool",
+   "name": "Craft",
+   "url": "https://keeltools.com/tools/craft/"
+  },
+  {
+   "type": "tool",
+   "name": "Routine",
+   "url": "https://keeltools.com/tools/routine/"
+  },
+  {
+   "type": "tool",
+   "name": "Todoist",
+   "url": "https://keeltools.com/tools/todoist/"
+  },
+  {
+   "type": "tool",
+   "name": "TickTick",
+   "url": "https://keeltools.com/tools/ticktick/"
+  },
+  {
+   "type": "tool",
+   "name": "Trello",
+   "url": "https://keeltools.com/tools/trello/"
+  },
+  {
+   "type": "tool",
+   "name": "Any.do",
+   "url": "https://keeltools.com/tools/any-do/"
+  },
+  {
+   "type": "tool",
+   "name": "Superlist",
+   "url": "https://keeltools.com/tools/superlist/"
+  },
+  {
+   "type": "tool",
+   "name": "Capacities",
+   "url": "https://keeltools.com/tools/capacities/"
+  },
+  {
+   "type": "tool",
+   "name": "AFFiNE",
+   "url": "https://keeltools.com/tools/affine/"
+  },
+  {
+   "type": "tool",
+   "name": "Anytype",
+   "url": "https://keeltools.com/tools/anytype/"
+  },
+  {
+   "type": "tool",
+   "name": "Hyprnote",
+   "url": "https://keeltools.com/tools/hyprnote/"
+  },
+  {
+   "type": "tool",
+   "name": "Focusmate",
+   "url": "https://keeltools.com/tools/focusmate/"
+  },
+  {
+   "type": "tool",
+   "name": "Forest",
+   "url": "https://keeltools.com/tools/forest/"
+  },
+  {
+   "type": "tool",
+   "name": "Make",
+   "url": "https://keeltools.com/tools/make/"
+  },
+  {
+   "type": "tool",
+   "name": "Lindy AI",
+   "url": "https://keeltools.com/tools/lindy-ai/"
+  },
+  {
+   "type": "tool",
+   "name": "Microsoft Copilot",
+   "url": "https://keeltools.com/tools/microsoft-copilot/"
+  },
+  {
+   "type": "skill",
+   "name": "Adversarial Code Review",
+   "url": "https://keeltools.com/skills/adversarial-code-review/"
+  },
+  {
+   "type": "skill",
+   "name": "Code Review Assistant",
+   "url": "https://keeltools.com/skills/code-review-assistant/"
+  },
+  {
+   "type": "skill",
+   "name": "Superpowers Systematic Debugging",
+   "url": "https://keeltools.com/skills/superpowers-systematic-debugging/"
+  },
+  {
+   "type": "skill",
+   "name": "Debug Checklist - 系统化 Debug 检查清单",
+   "url": "https://keeltools.com/skills/debug-checklist-debug/"
+  },
+  {
+   "type": "skill",
+   "name": "Context Onboarding",
+   "url": "https://keeltools.com/skills/context-onboarding/"
+  },
+  {
+   "type": "skill",
+   "name": "Project Documentation",
+   "url": "https://keeltools.com/skills/project-documentation/"
+  },
+  {
+   "type": "skill",
+   "name": "Document Summary",
+   "url": "https://keeltools.com/skills/document-summary/"
+  },
+  {
+   "type": "skill",
+   "name": "Summarize File",
+   "url": "https://keeltools.com/skills/summarize-file/"
+  },
+  {
+   "type": "prompt",
+   "name": "Code Reviewer",
+   "url": "https://keeltools.com/prompts/code-reviewer/"
+  },
+  {
+   "type": "prompt",
+   "name": "Debugging Detective",
+   "url": "https://keeltools.com/prompts/debugging-detective/"
+  },
+  {
+   "type": "prompt",
+   "name": "Linux Terminal",
+   "url": "https://keeltools.com/prompts/linux-terminal/"
+  },
+  {
+   "type": "prompt",
+   "name": "Codebase WIKI Documentation Skill",
+   "url": "https://keeltools.com/prompts/codebase-wiki-documentation-skill/"
+  },
+  {
+   "type": "prompt",
+   "name": "Component Documentation",
+   "url": "https://keeltools.com/prompts/component-documentation/"
+  },
+  {
+   "type": "prompt",
+   "name": "Documentation Maintainer Agent Role",
+   "url": "https://keeltools.com/prompts/documentation-maintainer-agent-role/"
+  },
+  {
+   "type": "prompt",
+   "name": "Code Review Assistant - Prompt",
+   "url": "https://keeltools.com/prompts/code-review-assistant-prompt/"
+  },
+  {
+   "type": "prompt",
+   "name": "Documentation Update Automation",
+   "url": "https://keeltools.com/prompts/documentation-update-automation/"
+  },
+  {
+   "type": "prompt",
+   "name": "Article Summarizer",
+   "url": "https://keeltools.com/prompts/article-summarizer/"
+  }
+ ]
+}

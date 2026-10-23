@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026 年，还值得买 4090 吗：自用、租赁与云端的三方账 · KeelTools Notes</title>
+<meta name="description" content="RTX 4090 买一台自用、按小时租、还是用云端 API：2026 年的价格与显存边界下，三种方案的盈亏平衡点各在哪；含一张决策表。">
+<link rel="canonical" href="https://richardxu001.github.io/keeltools-notes/zh/4090-buy-vs-rent.html">
+<link rel="alternate" hreflang="en" href="https://richardxu001.github.io/keeltools-notes/en/4090-buy-vs-rent.html">
+<link rel="alternate" hreflang="zh-CN" href="https://richardxu001.github.io/keeltools-notes/zh/4090-buy-vs-rent.html">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">KeelTools <b>Notes</b></a>
+    <nav class="site-nav" aria-label="导航">
+      <a href="../index.html">首页</a>
+      <a href="https://keeltools.com/directory/">工具目录</a>
+      <a href="https://keeltools.com/blog/">主站博客</a>
+    </nav>
+    <p class="lang"><a href="../en/4090-buy-vs-rent.html">English</a></p>
+  </div>
+</header>
+<main class="wrap">
+  <p class="eyebrow">Note 06 · Compute</p>
+  <h1>2026 年，还值得买 4090 吗：自用、租赁与云端的三方账</h1>
+  <p class="meta">2026-10-23 · 约 8 分钟</p>
+
+  <div class="lede">
+    <p>「要不要买一张 4090」在 2026 年已经不是信仰问题，是一道算术题：二手卡价格、租卡时薪、API token 单价三个数字摆在一起，答案自己会浮出来。</p>
+    <p>结论先给：<strong>每月稳定用 200 小时以上、且任务能自己排队的人，买卡仍然划算；其余人租比买省心，零散任务直接用 API。</strong></p>
+  </div>
+
+  <h2>01 三个数字先对齐</h2>
+  <p>自用的成本不是显卡标价，是<strong>购置价 ÷ 可用月数 + 电费 + 你自己的维护时间</strong>。租用的成本市场已经有公开锚点：Vast.ai 上 4090 的中位价约 $0.49/小时，最低价约 $0.14/小时——SpareHive 在其首页把这两个数字作为定价对照，并给出即时档 $0.25/小时、排队档 $0.15/小时的目标价。API 一侧，按 token 计费的模型单价各不相同，但对轻量推理来说，绝大多数人每月花不到一张卡的电费。</p>
+
+  <h2>02 三方账摆开</h2>
+  <table>
+    <caption>三种方案的适用边界</caption>
+    <thead><tr><th>方案</th><th>盈亏平衡点</th><th>适合</th></tr></thead>
+    <tbody>
+      <tr><td>买卡自用</td><td>月均 ≥ 200 小时（约每天 6–7 小时）</td><td>固定负载、模型自选、有散热与电费条件</td></tr>
+      <tr><td>按小时租</td><td>月均 20–200 小时</td><td>项目制负载、想试不同显卡、不愿管机器</td></tr>
+      <tr><td>用 API</td><td>月均 &lt; 20 小时或只需推理</td><td>不想碰显存与驱动、任务可拆成短调用</td></tr>
+    </tbody>
+  </table>
+  <p>中间那一档最常被忽略：项目制负载按小时租，跑完即停表，比买卡便宜得多——这正是 SpareHive 排队档的设计前提：<strong>能等的批量任务，用更低单价换延迟</strong>。它的排队档 $0.15/小时来自空闲消费级供给，代价是可能被中断；不能中断的任务选即时档。</p>
+
+  <h2>03 显存边界仍是硬约束</h2>
+  <p>4090 的 24 GB 显存决定了它能跑什么：量化后的 14B–32B 级模型跑得动，70B 级要么多卡要么上 A100/H100。如果你的目标模型超过这个档位，买 4090 之前先确认推理框架的显存估算——装不下的卡再便宜也是废铁。想看实测吞吐与显存对照，SpareHive 的 <a href="https://sparehive.com/blog/rtx-4090-vs-a100-vs-h100">4090 vs A100 vs H100 对比</a>有一份按模型规模排的表。</p>
+
+  <h2>04 决策线</h2>
+  <h3>问自己三个问题</h3>
+  <p>任务是固定还是项目制？固定且量大——买；项目制——租。模型需不需要你自己微调？需要——显存预算先行，卡的形态其次。你的时间愿意花在管机器上吗？不愿意——API 或托管租赁，别买。</p>
+  <h3>买卡之外的隐性成本</h3>
+  <p>电费、散热噪音、二手残值、驱动兼容——这些在 2026 年的 4090 二手市场里依然是真实变量。买之前按本地电价把每月电费算进去，很多人算完发现直接租更省。</p>
+  <p>想先看 GPU 租赁市场的整体价格分布，SpareHive 整理过一份 <a href="https://sparehive.com/blog/gpu-rental-pricing-compared">显卡租赁价格对比</a>；手里已有闲卡的反向操作见 <a href="https://sparehive.com/blog/rent-out-your-gpu">把闲置 GPU 租出去</a>；AI 工具侧的选择在 <a href="https://keeltools.com/directory/">KeelTools 工具目录</a> 里按「图像/视频生成」筛一遍，就能看到哪些工作流已经不需要自己跑模型。</p>
+  <blockquote>如果只能记一条：按「月均小时数」分档——200 小时以上买，20–200 小时租，20 小时以下用 API。档位比品牌重要。</blockquote>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p>KeelTools Notes · GitHub Pages · 更多算力与工具内容见 <a href="https://keeltools.com/blog/">KeelTools 博客</a></p>
+  </div>
+</footer>
+</body>
+</html>
